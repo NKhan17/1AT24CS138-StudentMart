@@ -1,12 +1,92 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Dashboard from "./components/dashboard";
+import Profile from "./components/profile";
+
+import "./App.css";
+
+function ProtectedRoute({ children }) {
+  const token =
+    localStorage.getItem(
+      "studentmartToken"
+    );
+
+  if (!token) {
+    return (
+      <Navigate
+        to="/login"
+        replace
+      />
+    );
+  }
+
+  return children;
+}
+
 function App() {
   return (
-    <div>
-      <h1>StudentMart</h1>
-      <h2>Welcome to StudentMart</h2>
-      <p>Your Online Shopping Application</p>
-      <p>Name: Neha Khan</p>
-      <p>USN: 1AT24CS138</p>
-    </div>
+    <BrowserRouter>
+
+      <Routes>
+
+        <Route
+          path="/"
+          element={
+            <Navigate
+              to="/login"
+              replace
+            />
+          }
+        />
+
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="*"
+          element={
+            <Navigate
+              to="/login"
+              replace
+            />
+          }
+        />
+
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
