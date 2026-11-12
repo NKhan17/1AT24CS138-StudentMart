@@ -1,0 +1,101 @@
+/* ==========================================================================
+   4. PROFILE PAGE - ENHANCED 2-COLUMN WORKSPACE
+   ========================================================================== */
+
+.profile-page {
+  min-height: 100vh;
+  background: #f1f8f4;
+}
+
+.profile-content {
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 42px 0 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.profile-header {
+  padding: 34px 42px;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1.5px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 16px 36px -6px rgba(4, 29, 16, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: linear-gradient(180deg, #84cc16 0%, #10b981 100%);
+}
+
+.profile-header h1 {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 800;
+  color: #052112;
+  letter-spacing: -0.7px;
+  margin-top: 6px;
+}
+
+.profile-header p {
+  margin-top: 4px;
+  font-family: var(--font-body);
+  color: #4a6b57;
+  font-size: 15px;
+}
+
+.profile-grid,
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.profile-card,
+.profile-box {
+  padding: 38px 42px;
+  border-radius: 26px;
+  background: #ffffff;
+  border: 1.5px solid rgba(16, 185, 129, 0.18);
+  box-shadow: 0 16px 36px -6px rgba(4, 29, 16, 0.08);
+  position: relative;
+}
+
+.profile-card h2,
+.profile-box h2 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: #052112;
+  letter-spacing: -0.4px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1.5px dashed #a7f3d0;
+}
+
+/* Multi-Column Form inside Personal Information */
+.profile-card form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 22px;
+}
+
+.profile-card form .primary-button {
+  grid-column: 1 / -1;
+  margin-top: 14px;
+}
+
+/* Password Form Stays Single Column */
+.profile-card:nth-of-type(2) form {
+  grid-template-columns: 1fr;
+}

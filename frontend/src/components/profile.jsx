@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../config";
+import { useCart } from "../context/CartContext";
 
 function Profile() {
   const navigate = useNavigate();
+  const { totalItems } = useCart();
 
   const [form, setForm] = useState({
     name: "",
@@ -206,7 +208,8 @@ function Profile() {
 
         <div className="nav-actions">
           <Link to="/dashboard">Dashboard</Link>
-
+          <Link to="/products">Products</Link>
+          <Link to="/cart">Cart {totalItems > 0 && `(${totalItems})`}</Link>
           <button className="logout-button" onClick={logout}>
             Logout
           </button>

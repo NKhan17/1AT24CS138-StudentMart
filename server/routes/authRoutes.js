@@ -141,6 +141,7 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign(
       {
         userId: user._id,
+        role: user.role || "user",
       },
       process.env.JWT_SECRET,
       {
@@ -164,6 +165,7 @@ router.post("/login", async (req, res) => {
         semester: user.semester,
         year: user.year,
         dateOfBirth: user.dateOfBirth,
+        role: user.role || "user",
       },
     });
   } catch (error) {
@@ -171,6 +173,82 @@ router.post("/login", async (req, res) => {
 
     return res.status(500).json({
       message: "Server error during login.",
+    });
+  }
+});
+
+/* =========================================
+   ADMIN LOGIN
+   POST /api/auth/admin/login
+   Separate, secure authentication mechanism for admin accounts
+   ========================================= */
+
+router.post("/admin/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({
+        message: "Admin email and password are required.",
+      });
+    }
+
+    const cleanEmail = email.trim().toLowerCase();
+
+    const user = await User.findOne({
+      email: cleanEmail,
+    });
+
+    if (!user) {
+      return res.status(401).json({
+        message: "Invalid admin credentials.",
+      });
+    }
+
+    // Role check: must be admin
+    if (user.role !== "admin") {
+      return res.status(403).json({
+        message: "Access forbidden: this account does not have admin privileges.",
+      });
+    }
+
+    const passwordMatch = await bcrypt.compare(
+      password,
+      user.password
+    );
+
+    if (!passwordMatch) {
+      return res.status(401).json({
+        message: "Invalid admin credentials.",
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        userId: user._id,
+        role: "admin",
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1d",
+      }
+    );
+
+    return res.status(200).json({
+      message: "Admin login successful.",
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        usn: user.usn,
+        email: user.email,
+        role: "admin",
+      },
+    });
+  } catch (error) {
+    console.error("ADMIN LOGIN ERROR:", error);
+    return res.status(500).json({
+      message: "Server error during admin login.",
     });
   }
 });

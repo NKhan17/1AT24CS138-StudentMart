@@ -197,6 +197,12 @@ function Login() {
 
         </div>
 
+        <div style={{ marginTop: "16px", textAlign: "center", fontSize: "13px" }}>
+          <Link to="/admin/login" style={{ color: "#059669", fontWeight: "700", textDecoration: "none" }}>
+            Admin Portal Access →
+          </Link>
+        </div>
+
       </div>
 
     </div>

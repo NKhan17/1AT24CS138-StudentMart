@@ -1,0 +1,114 @@
+/* ==========================================================================
+   2. NAVBAR - DEEP FOREST GREEN WITH LIME ACCENTS
+   ========================================================================== */
+
+.top-navbar,
+.navbar {
+  min-height: 74px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #041d10 0%, #08331c 100%);
+  border-bottom: 1.5px solid rgba(132, 204, 22, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 8px 30px rgba(4, 29, 16, 0.4);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.nav-logo {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #84cc16, #10b981);
+  color: #041d10;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 20px;
+  box-shadow: 0 4px 14px rgba(132, 204, 22, 0.4);
+}
+
+.nav-brand h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+}
+
+.nav-brand span {
+  display: block;
+  margin-top: 1px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: #84cc16;
+}
+
+.nav-links,
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-item,
+.nav-actions a {
+  color: #d1fae5;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-actions a:hover {
+  color: #ffffff;
+  background: rgba(132, 204, 22, 0.15);
+}
+
+.nav-item.active {
+  color: #041d10;
+  background: linear-gradient(135deg, #84cc16, #34d399);
+  box-shadow: 0 4px 14px rgba(132, 204, 22, 0.35);
+  font-weight: 800;
+}
+
+.nav-logout,
+.logout-button {
+  padding: 8px 18px;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-logout:hover,
+.logout-button:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+}

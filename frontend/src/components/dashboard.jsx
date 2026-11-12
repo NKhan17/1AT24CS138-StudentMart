@@ -3,9 +3,12 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+import ProductGrid from "./ProductGrid";
 
 function Dashboard() {
   const navigate = useNavigate();
+  const { totalItems } = useCart();
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -133,6 +136,29 @@ function Dashboard() {
           </Link>
 
           <Link
+            to="/products"
+            className="nav-item"
+          >
+            Products
+          </Link>
+
+          <Link
+            to="/cart"
+            className="nav-item"
+          >
+            Cart {totalItems > 0 && <span className="nav-cart-badge">{totalItems}</span>}
+          </Link>
+
+          {user?.role === "admin" && (
+            <Link
+              to="/admin"
+              className="nav-item"
+            >
+              Admin
+            </Link>
+          )}
+
+          <Link
             to="/profile"
             className="nav-item"
           >
@@ -235,12 +261,22 @@ function Dashboard() {
               section.
             </p>
 
-            <Link
-              to="/profile"
-              className="dashboard-action"
-            >
-              Edit Profile
-            </Link>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <Link
+                to="/products"
+                className="dashboard-action"
+              >
+                Browse Products
+              </Link>
+
+              <Link
+                to="/profile"
+                className="dashboard-action"
+                style={{ background: "rgba(255, 255, 255, 0.15)", color: "#ffffff", border: "1.5px solid rgba(132, 204, 22, 0.4)" }}
+              >
+                Edit Profile
+              </Link>
+            </div>
 
           </div>
 
@@ -349,6 +385,11 @@ function Dashboard() {
 
           </div>
 
+        </section>
+
+        {/* Products section */}
+        <section className="dashboard-products-section">
+          <ProductGrid />
         </section>
 
       </main>

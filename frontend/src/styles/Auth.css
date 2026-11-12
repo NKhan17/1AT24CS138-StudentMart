@@ -1,0 +1,349 @@
+/* ==========================================================================
+   1. AUTH PAGES (LOGIN & REGISTER) - FULL GREEN IMMERSION + CONTRAST
+   ========================================================================== */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 24px;
+  background-color: #04180d;
+  background-image:
+    radial-gradient(at 5% 5%, rgba(132, 204, 22, 0.22) 0px, transparent 45%),
+    radial-gradient(at 95% 95%, rgba(16, 185, 129, 0.3) 0px, transparent 55%),
+    radial-gradient(at 50% 50%, rgba(6, 43, 23, 0.8) 0px, transparent 75%),
+    radial-gradient(at 85% 15%, rgba(245, 158, 11, 0.12) 0px, transparent 40%);
+}
+
+.background-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(75px);
+  z-index: 0;
+}
+
+.circle-one {
+  width: 520px;
+  height: 520px;
+  top: -140px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(132, 204, 22, 0.38), transparent 70%);
+}
+
+.circle-two {
+  width: 580px;
+  height: 580px;
+  right: -140px;
+  bottom: -140px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4), transparent 70%);
+}
+
+/* Two-tone Split Auth Card */
+.auth-card {
+  width: 980px;
+  max-width: 100%;
+  min-height: 580px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(132, 204, 22, 0.3);
+  box-shadow: 
+    0 30px 80px -15px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(16, 185, 129, 0.15);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 390px 1fr;
+  grid-template-rows: auto auto auto;
+}
+
+/* Left Hero Brand Panel in Deep Forest Green */
+.logo-section {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  margin: 0;
+  padding: 50px 38px;
+  background: linear-gradient(165deg, #072a17 0%, #03170c 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid rgba(52, 211, 153, 0.15);
+}
+
+.logo-section::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(132, 204, 22, 0.25), transparent 70%);
+  pointer-events: none;
+}
+
+/* Contrast Highlight Badge in Showcase */
+.logo-section::after {
+  content: "⚡ FAST & ENCRYPTED • Instant student verification powered by StudentMart Cloud.";
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #d1fae5;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #84cc16 0%, #10b981 100%);
+  color: #041d10;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(132, 204, 22, 0.45);
+  letter-spacing: -1px;
+}
+
+.logo-section h1 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+.logo-section p {
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #a7f3d0;
+  font-weight: 500;
+}
+
+/* Right Form Area */
+.login-heading {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  padding: 46px 52px 0;
+  margin-bottom: 0;
+}
+
+.login-heading span,
+.dashboard-label,
+.small-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #065f46;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: #ecfdf5;
+  padding: 5px 14px;
+  border-radius: 30px;
+  border: 1px solid #6ee7b7;
+  margin-bottom: 10px;
+}
+
+.login-heading span::before,
+.dashboard-label::before,
+.small-label::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.login-heading h2 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  color: #052112;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+}
+
+.login-heading p {
+  margin-top: 6px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #4a6b57;
+  line-height: 1.5;
+}
+
+.auth-card form {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: 24px 52px 0;
+}
+
+.input-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label,
+.profile-card label {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e3a2b;
+  letter-spacing: 0.2px;
+}
+
+.input-group input,
+.profile-card input,
+.profile-card select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #d1fae5;
+  border-radius: 12px;
+  outline: none;
+  background: #f7fdf9;
+  color: #052112;
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.input-group input::placeholder,
+.profile-card input::placeholder {
+  color: #6ee7b7;
+  opacity: 0.8;
+}
+
+.input-group input:hover,
+.profile-card input:hover,
+.profile-card select:hover {
+  border-color: #34d399;
+  background: #ffffff;
+}
+
+.input-group input:focus,
+.profile-card input:focus,
+.profile-card select:focus {
+  border-color: #10b981;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+/* Vibrant Dual-Tone Green Button */
+.login-button,
+.primary-button {
+  width: 100%;
+  padding: 15px 24px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s ease;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.4px;
+}
+
+.login-button:hover,
+.primary-button:hover {
+  background: linear-gradient(135deg, #84cc16 0%, #059669 100%);
+  color: #03170c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(132, 204, 22, 0.45);
+}
+
+.login-button:active,
+.primary-button:active {
+  transform: translateY(0);
+}
+
+.login-button:disabled,
+.primary-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.error-message {
+  margin-bottom: 16px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #fef2f2;
+  border: 1.5px solid #f87171;
+  color: #991b1b;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.success-message {
+  margin-bottom: 16px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #ecfdf5;
+  border: 1.5px solid #34d399;
+  color: #047857;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.register-section {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  margin: 0;
+  padding: 24px 52px 38px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.register-section span {
+  color: #4a6b57;
+}
+
+.register-section a {
+  margin-left: 6px;
+  color: #059669;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.register-section a:hover {
+  color: #84cc16;
+  text-decoration: underline;
+}

@@ -23,6 +23,16 @@ app.use(
   require("./routes/authRoutes")
 );
 
+app.use(
+  "/api/products",
+  require("./routes/ProductRoutes")
+);
+
+app.use(
+  "/api/cart",
+  require("./routes/CartRoutes")
+);
+
 async function startServer() {
   try {
     await mongoose.connect(
@@ -32,6 +42,9 @@ async function startServer() {
     console.log(
       "MongoDB connected successfully"
     );
+
+    const seedDefaultAdmin = require("./seedAdmin");
+    await seedDefaultAdmin();
 
     app.listen(
       PORT,

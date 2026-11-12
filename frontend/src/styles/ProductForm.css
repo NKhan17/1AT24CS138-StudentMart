@@ -1,0 +1,173 @@
+/* ==========================================================================
+   PRODUCT FORM PAGE - STUDENTMART THEME
+   ========================================================================== */
+
+.product-form-page {
+  width: 92%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 42px 0 70px;
+}
+
+.product-form-card {
+  padding: 42px 48px;
+  background: #ffffff;
+  border-radius: 26px;
+  border: 1.5px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 16px 36px -6px rgba(4, 29, 16, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-form-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #84cc16, #10b981);
+}
+
+.product-form-card h2 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  color: #052112;
+  letter-spacing: -0.5px;
+}
+
+.product-form-card > p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #4a6b57;
+  margin-top: -6px;
+  margin-bottom: 6px;
+}
+
+.product-form-card label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e3a2b;
+  letter-spacing: 0.2px;
+}
+
+.product-form-card input,
+.product-form-card textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #d1fae5;
+  border-radius: 12px;
+  outline: none;
+  background: #f7fdf9;
+  color: #052112;
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.product-form-card input::placeholder,
+.product-form-card textarea::placeholder {
+  color: #6ee7b7;
+  opacity: 0.8;
+}
+
+.product-form-card input:focus,
+.product-form-card textarea:focus {
+  border-color: #10b981;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.product-form-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.product-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.product-form-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-form-message {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #fef2f2;
+  border: 1.5px solid #f87171;
+  color: #991b1b;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.product-form-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.product-form-actions button[type="submit"] {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s ease;
+}
+
+.product-form-actions button[type="submit"]:hover {
+  background: linear-gradient(135deg, #84cc16 0%, #059669 100%);
+  color: #03170c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(132, 204, 22, 0.45);
+}
+
+.product-form-actions button[type="button"] {
+  padding: 14px 24px;
+  border: 1.5px solid #d1fae5;
+  border-radius: 14px;
+  background: #f7fdf9;
+  color: #4a6b57;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.product-form-actions button[type="button"]:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+@media (max-width: 640px) {
+  .product-form-card {
+    padding: 28px 20px;
+  }
+
+  .product-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .product-form-actions {
+    flex-direction: column;
+  }
+}
